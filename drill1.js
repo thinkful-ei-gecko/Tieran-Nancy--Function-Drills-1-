@@ -25,4 +25,4 @@ function getYearOfBirth(age){
     return 2019 - age;
 }
 
-getYearOfBirth(-22);
+getYearOfBirth(22);
