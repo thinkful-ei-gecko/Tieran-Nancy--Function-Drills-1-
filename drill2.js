@@ -46,5 +46,49 @@ function decode(word){
         return '';
     }
 }
+
+
+function inMonth(month,leapYear){
+    switch(month){
+        case 'februray':
+            return leapYear ? `${month} has 29 days` : `${month} has 28 days`;
+            break;
+            case 'april':
+            case 'june':
+            case 'september':
+            case 'november':
+                return `${month} has 30 days`;
+                break;
+            default:
+                return `${month} has 31 days`;
+    }
 }
 
+console.log(inMonth('februray',true))
+
+
+function RPS(num){
+    // 1 scissors
+    // 2 rock
+    // 3 paper
+   if(num < 1 || num > 3){
+       throw error("Please pick numbers 1-3 only")
+   }
+   const randomNum = Math.floor(Math.random()* 3) + 1
+   if(randomNum === num){
+       return "TIE";
+   }
+   else if ((num === 1 && randomNum === 3)|| (num === 3 && randomNum === 1)){
+       return "scissors beats paper";
+   }
+   else if ((num === 2 && randomNum === 3)|| (num === 3 && randomNum === 2)){
+    return "paper beats rock";
+}
+    else if ((num === 2 && randomNum === 1)|| (num === 1 && randomNum === 2)){
+    return "rock beats scissors";
+}
+
+    
+}
+
+console.log(RPS(3));
